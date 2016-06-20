@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script language="JavaScript">
+        var ready = function() {
+            // fetches and promises
+            fetch('http://localhost:8081/restaurantMenu').then(function(result) {
+                return result.json(); // a promise of JSON
+            }).then(function(menu) { // the menu is now the JSON
+                console.log(menu);
+                var starterMenu = document.getElementsByClassName("menu_container");
+                var counter = 0;
+
+                for(var i=0;i<menu.length; i++){
+                    starterMenu[0].innerHTML += '<div id="' + menu[i].Title + '"' +
+                            'class="menu_type"' +
+                            'onclick="console.log(' + menu[i].Title + ')"></div>';
+                }
+
+                for(var i=0;i<menu.length; i++) {
+                    var menu_type = document.getElementsByClassName("menu_type");
+
+                    if(menu[i].Title) {
+                        menu_type[i].innerHTML += '<div class="menu_header"><p>' + menu[i].Title + '</p></div>' +
+                            '<div class="bottom_border"></div>';
+                    }
+
+                    if(menu[i].Items.length>0){
+                        for (var j = 0; j < menu[i].Items.length; j++) {
+                            menu_type[i].innerHTML += '<div class="menu_option"></div>';
+                        }
+
+                        for (var j = 0; j < menu[i].Items.length; j++) {
+                            var menu_option = document.getElementsByClassName("menu_option");
+                            menu_option[counter].innerHTML += '<div class="menu_option_text">' +
+                                '<p class="menu_option_name">' + menu[i].Items[j].Title + '</p>' +
+                                '<p class="menu_option_description">' + menu[i].Items[j].Description + '</p>' +
+                                '</div>' +
+                                '<div class="menu_option_nonText">' +
+                                '<p class="menu_option_price">' + menu[i].Items[j].Price + '</p>' +
+                                '</div>';
+                            counter ++;
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+    <link rel="stylesheet" type="text/css" href="./menu.css">
+    <div class="title">
+        <title>Thai Garden</title>
+    </div>
+</head>
+<body onload="ready();">
+    <div class="header_image"></div>
+    <div class="menu_container">
+    </div>
+</body>
+</html>
