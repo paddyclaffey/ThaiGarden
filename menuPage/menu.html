@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <script language="JavaScript">
-        $(function() {
-            $('#content').load('/templates.html');
-        });
-
         var ready = function() {
             // fetches and promises
             fetch('http://localhost:8081/restaurantMenu').then(function(result) {
@@ -16,22 +12,21 @@
                 var counter = 0;
 
                 for(var i=0;i<menu.length; i++){
-                    starterMenu[0].innerHTML += '<div id="' + menu[i].Title + '"' +
-                            'class="menu_type"' +
-                            'onclick="console.log(' + menu[i].Title + ')"></div>';
+                    starterMenu[0].innerHTML += '<div class="menu_type"></div>';
                 }
 
                 for(var i=0;i<menu.length; i++) {
                     var menu_type = document.getElementsByClassName("menu_type");
 
                     if(menu[i].Title) {
-                        menu_type[i].innerHTML += '<div class="menu_header"><p>' + menu[i].Title + '</p></div>' +
+                        menu_type[i].innerHTML += '<div class="menu_header"' +
+                            'onclick="expandCollapse(\'' + menu[i].Title + '\')"><p>' + menu[i].Title + '</p></div>' +
                             '<div class="bottom_border"></div>';
                     }
 
                     if(menu[i].Items.length>0){
                         for (var j = 0; j < menu[i].Items.length; j++) {
-                            menu_type[i].innerHTML += '<div class="menu_option"></div>';
+                            menu_type[i].innerHTML += '<div name="' + menu[i].Title + '" class="menu_option"></div>';
                         }
 
                         for (var j = 0; j < menu[i].Items.length; j++) {
@@ -49,6 +44,18 @@
                 }
             });
         };
+
+        var expandCollapse = function (elementName){
+            var elements = document.getElementsByName(elementName);
+            for(var i=0; i<elements.length;i++){
+                if(elements[i].style.display === "none"){
+                    elements[i].style.display = "flex";
+                }
+                else{
+                    elements[i].style.display = "none";
+                }
+            }
+        }
     </script>
     <link rel="stylesheet" type="text/css" href="./menu.css">
     <div class="title">
@@ -58,7 +65,6 @@
 <body onload="ready();">
     <div class="header_image"></div>
     <div class="menu_container">
-        <div
     </div>
 </body>
 </html>
