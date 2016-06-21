@@ -1,0 +1,60 @@
+#bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.container{
+    display: block;
+    margin: auto;
+    width: 400px;
+    padding-top: 10%;
+}
+
+.locationGrid {
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    opacity: 0.8;
+    background-color: #f5f5f0;
+
+}
+
+.grid__item {
+    flex: 1;
+    padding: 12px;
+    padding-left: 10%;
+}
+.grid__item:first-child {
+    flex: 1;
+    padding: 12px;
+    border-radius: 15px 15px;
+    background: white;
+    opacity: 1;
+}
+
+h2 {
+    text-align: center;
+    color: darkgreen;
+}
+
+img:nth-child(1){
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:40px;
+}
+a img{
+    height:20px !important;
+    float:right;
+    padding-right: 10%;
+}
+a {
+    text-decoration:none;
+    color: brown;
+}
+ hr {
+     width: 80%;
+ }
