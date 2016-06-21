@@ -2,70 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script language="JavaScript">
-        var ready = function() {
-            // fetches and promises
-            fetch('http://localhost:8081/restaurantMenu').then(function(result) {
-                return result.json(); // a promise of JSON
-            }).then(function(menu) { // the menu is now the JSON
-                var starterMenu = document.getElementsByClassName("menu_container");
-                var counter = 0;
-
-                for(var i=0;i<menu.length; i++){
-                    starterMenu[0].innerHTML += '<div class="menu_type"></div>';
-                }
-
-                for(var i=0;i<menu.length; i++) {
-                    var menu_type = document.getElementsByClassName("menu_type");
-
-                    if(menu[i].Title) {
-                        menu_type[i].innerHTML += '<div class="menu_header"' +
-                            'onclick="expandCollapse(\'' + menu[i].Title + '\')"><span>' + menu[i].Title +
-                            '</span><img name="' + menu[i].Title + 'expandIcon" src="../images/chevron.png"></div>' +
-                            '<div class="bottom_border"></div>';
-                    }
-
-                    if(menu[i].Items.length>0){
-                        for (var j = 0; j < menu[i].Items.length; j++) {
-                            menu_type[i].innerHTML += '<div name="' + menu[i].Title + '" class="menu_option"></div>';
-                        }
-
-                        for (var j = 0; j < menu[i].Items.length; j++) {
-                            var menu_option = document.getElementsByClassName("menu_option");
-                            menu_option[counter].innerHTML += '<div class="menu_option_text">' +
-                                '<p class="menu_option_name">' + menu[i].Items[j].Title + '</p>' +
-                                '<p class="menu_option_description">' + menu[i].Items[j].Description + '</p>' +
-                                '</div>' +
-                                '<div class="menu_option_nonText">' +
-                                '<p class="menu_option_price">' + menu[i].Items[j].Price + '</p>' +
-                                '</div>';
-                            counter ++;
-                        }
-                    }
-                }
-            });
-        };
-
-        var expandCollapse = function (elementName){
-            var image = document.getElementsByName( elementName +'expandIcon');
-            if(!(image[0].style.transform === 'rotate(0deg)')){
-                image[0].style.transform = 'rotate(0deg)';
-            }
-            else{
-                image[0].style.transform = 'rotate(90deg)';
-            }
-            
-            var elements = document.getElementsByName(elementName);
-            for(var i=0; i<elements.length;i++){
-                if(elements[i].style.display === "none"){
-                    elements[i].style.display = "flex";
-                }
-                else{
-                    elements[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+    <script src="./populateMenu.js"></script>
     <link rel="stylesheet" type="text/css" href="./menu.css">
     <div class="title">
         <title>Thai Garden</title>
@@ -73,7 +10,66 @@
 </head>
 <body onload="ready();">
     <div class="header_image"></div>
-    <div class="menu_container">
+    <div class="container">
+        <div class="menu_container">
+            <div class="header">
+                <img src="../images/ThaiGarden-Logo.png">
+            </div>
+        </div>
+        <div class="side_border"></div>
+        <div class="checkout_container">
+            <img src="../images/close.png">
+            <p>Your Order</p>
+            <div class="order_container">
+                <div class="order_list"></div>
+                <div class="order_coupon"></div>
+                <div class="order_total"></div>
+            </div>
+
+            <button id="proceedToCheckoutButton" onclick="displayCheckout();">Proceed to Checkout</button>
+
+            <div id="checkout" style="display: none">
+                <p>Checkout</p>
+                <div class="checkout_container_option">
+                    <div class="checkout_container_option_for">
+                        <p>Order for</p>
+                        <form>
+                            <input type="radio" name="orderFor" value="collection" checked> Collection<br>
+                            <input type="radio" name="orderFor" value="delivery"> Delivery<br>
+                        </form>
+                    </div>
+                    <div class="checkout_container_option_collect">
+                        <p>Collect at</p>
+                        <select name="collectionTime">
+                            <option value="ASAP">ASAP</option>
+                            <option value=".5">30 min</option>
+                            <option value="1">1 Hour</option>
+                            <option value="1.5">1 Hour 30 min</option>
+                            <option value="2">2 Hours</option>
+                        </select>
+                    </div>
+                    <div class="checkout_container_option_pay">
+                        <p>Pay with</p>
+                        <form>
+                            <input type="radio" name="payWith" value="cash" checked> Cash<br>
+                            <input type="radio" name="payWith" value="card">Credit/Debit Card<br>
+                        </form>
+                    </div>
+                    <div class="checkout_container_option_name">
+                        <label>Name</label>
+                        <input type="text" required="required">
+                    </div>
+                    <div class="checkout_container_option_mobile">
+                        <label>Mobile No.</label>
+                        <input type="number">
+                    </div>
+                    <div class="checkout_container_option_confirm">
+                        <p onclick="cancelOrder">Cancel</p>
+                        <button onclick="confirmOrder()">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

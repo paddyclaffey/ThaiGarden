@@ -13,24 +13,139 @@ body{
     background-image: url("../images/thai_food.jpg");    
 }
 
+.container{
+    margin-top: -10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    font-family: Helvetica sans-serif;
+}
+
+.header{
+    background-color: #ffffff;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .menu_container{
+    flex: 3;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    font-family: "Helvetica';
+}
 
+.checkout_container{
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.side_border{
+    border-left: 3px solid #406840;
+    background-color: #FFFFFF;
+    width: 18px;
+}
+
+.checkout_container > img {
+    float: right;
+    height: 15px;
+    width: 20px;
+    margin-top: 20px;
+}
+
+.checkout_container > p {
+    color: #406840;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 35px;
+}
+
+.checkout_container_option_for {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkout_container_option_for > p {
+    flex: 1
+}
+
+.checkout_container_option_for > form {
+    flex: 3
+}
+
+.checkout_container_option_collect{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.checkout_container_option_collect > p{
+    flex: 1
+}
+.checkout_container_option_collect > select{
+    flex: 3
+}
+
+.checkout_container_option_pay {
+    display: flex;
+    flex-direction: row;
+}
+.checkout_container_option_pay > p {
+    flex: 1
+}
+.checkout_container_option_pay > form {
+    flex: 3
+}
+
+.checkout_container_option_name{
+    display: flex;
+    flex-direction: row;
+}
+.checkout_container_option_name > p {
+    flex: 1
+}
+.checkout_container_option_name > form {
+    flex: 3
+}
+
+.checkout_container_option_mobile {
+    display: flex;
+    flex-direction: row;
+}
+.checkout_container_option_mobile > p {
+    flex: 1
+}
+.checkout_container_option_mobile > form {
+    flex: 3
+}
+
+.checkout_container_option_confirm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.checkout_container_option_confirm > p {
+    flex: 1
+}
+.checkout_container_option_confirm > button {
+    flex: 3
 }
 
 .menu_type{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 88%;
     border-radius: 6px 6px;
     background-color: #ffffff;
     opacity: 0.75;
     margin-bottom: 25px;
+    width: 100%;
+    height: 250px;
+    overflow-y: auto;
 }
 
 .menu_option {
@@ -40,6 +155,19 @@ body{
     min-width: 50%;
     margin-left: 15px;
     margin-right: 15px;
+    height: 100px;
+}
+
+.order_list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.order_list_item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .menu_option_text {
@@ -99,4 +227,5 @@ body{
 .menu_option_price {
     color: #000;
     font-size: 18px;
+    margin-right: 15px;
 }
