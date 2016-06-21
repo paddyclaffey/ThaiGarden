@@ -51,7 +51,7 @@ var ready = function() {
                     var menu_option = document.getElementsByClassName("menu_option");
                     menu_option[counter].innerHTML += '<div class="menu_option_text">' +
                         '<p class="menu_option_name">' + menu[i].Items[j].Title + '</p>' +
-                        '<p class="menu_option_description">' + menu[i].Items[j].Description + '</p>' +
+                        '<p class="menu_option_description">' + menu[i].Items[j].Description + '</p><hr>' +
                         '</div>' +
                         '<div class="menu_option_nonText">' +
                         '<p class="menu_option_price">€' + menu[i].Items[j].Price + '</p>' +
