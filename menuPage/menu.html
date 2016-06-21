@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <script language="JavaScript">
+        $(function() {
+            $('#content').load('/templates.html');
+        });
+
         var ready = function() {
             // fetches and promises
             fetch('http://localhost:8081/restaurantMenu').then(function(result) {
                 return result.json(); // a promise of JSON
             }).then(function(menu) { // the menu is now the JSON
-                console.log(menu);
                 var starterMenu = document.getElementsByClassName("menu_container");
                 var counter = 0;
 
@@ -55,6 +58,7 @@
 <body onload="ready();">
     <div class="header_image"></div>
     <div class="menu_container">
+        <div
     </div>
 </body>
 </html>
