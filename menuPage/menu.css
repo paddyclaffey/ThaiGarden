@@ -4,7 +4,7 @@
 
 @media only screen and (max-width: 500px){
     .header_image{
-        background-image: url("../images/ThaiGarden-Logo.png");
+        background-image: url("../images/ThaiGarden-Logo.png SMALLER");
     }
 }
 
@@ -56,7 +56,12 @@ body{
     flex-wrap: nowrap;
 }
 
-.menu_header > p {
+.menu_header{
+    margin-top: 20px;
+    margin-bottom: 17px;
+}
+
+.menu_header > span {
     color: #406840;
     font-size: 24px;
     font-weight: bold;
@@ -64,6 +69,12 @@ body{
     margin-left: 15px;
     margin-right: 15px;
 }
+
+.menu_header > img {
+    float: right;
+    margin-right: 15px;
+    transform: rotate(90deg);
+ }
 
 .bottom_border {
     border-bottom: 1px solid #406840;
