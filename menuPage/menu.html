@@ -20,7 +20,8 @@
 
                     if(menu[i].Title) {
                         menu_type[i].innerHTML += '<div class="menu_header"' +
-                            'onclick="expandCollapse(\'' + menu[i].Title + '\')"><p>' + menu[i].Title + '</p></div>' +
+                            'onclick="expandCollapse(\'' + menu[i].Title + '\')"><span>' + menu[i].Title +
+                            '</span><img name="' + menu[i].Title + 'expandIcon" src="../images/chevron.png"></div>' +
                             '<div class="bottom_border"></div>';
                     }
 
@@ -46,6 +47,14 @@
         };
 
         var expandCollapse = function (elementName){
+            var image = document.getElementsByName( elementName +'expandIcon');
+            if(!(image[0].style.transform === 'rotate(0deg)')){
+                image[0].style.transform = 'rotate(0deg)';
+            }
+            else{
+                image[0].style.transform = 'rotate(90deg)';
+            }
+            
             var elements = document.getElementsByName(elementName);
             for(var i=0; i<elements.length;i++){
                 if(elements[i].style.display === "none"){
