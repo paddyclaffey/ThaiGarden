@@ -1,13 +1,5 @@
-.header_image{
-    background-image: url("../images/ThaiGarden-Logo.png");
+body{
 }
-
-@media only screen and (max-width: 500px){
-    .header_image{
-        background-image: url("../images/ThaiGarden-Logo.png");
-    }
-}
-
 #bg{
     position: fixed;
     top: 0;
@@ -18,14 +10,17 @@
 }
 
 .container{
+    position:relative;
     background-color: transparent;
     display: block;
-    margin: auto;
+    margin-left: 25%;
     width: 500px;
+    border-radius: 0px 0px 30px 30px;
     border-style: solid;
     border-width: 1px;
     border-color: #114411;
-    position: relative;
+    float:left;
+    top:-10px;
 }
 
 .header{
@@ -36,12 +31,15 @@
     border-width: .5px;
     border-color: #b3b3b3;
     position: absolute;
+    top: 0;
     z-index: 10;
+    height: 80px;
 }
 img.image {
     padding-top: 15px;
     padding-left: 40px;
     padding-bottom: 12px;
+    height: 50px;
 }
 
 img.basket{
@@ -51,6 +49,7 @@ img.basket{
 }
 
 .menu_container{
+    overflow: visible;
     background-color: white;
     padding-top:80px;
     flex: 3;
@@ -59,14 +58,25 @@ img.basket{
     flex-wrap: nowrap;
     align-items: center;
     opacity: 0.8;
+    overflow-y: scroll;
+    top: 0;
 }
 
 .checkout_container{
     flex: 1;
     background-color: #ffffff;
+    border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    width: 20%;
+    height:110vh;
+    border-left: 3px solid #406840;
+    position: fixed;
+    top: 0;
+    left:58.7%;
+
+
 }
 
 .side_border{
@@ -177,6 +187,7 @@ img.basket{
     min-width: 50%;
     margin-left: 15px;
     margin-right: 15px;
+    height: 100px;
 }
 
 .order_list{
@@ -186,11 +197,6 @@ img.basket{
 }
 
 .order_list_item {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-.menu_option_chooseItem{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -228,7 +234,7 @@ img.basket{
     float: right;
     margin-right: 15px;
     transform: rotate(90deg);
- }
+}
 
 .bottom_border {
     border-bottom: 1px solid #406840;
@@ -256,7 +262,7 @@ img.basket{
     margin-right: 15px;
 }
 
-hr {
+hr.line {
     width: 100%;
     height: 8px;
     border: 0;
