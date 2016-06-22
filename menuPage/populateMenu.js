@@ -45,12 +45,14 @@ var ready = function() {
             if(menu[i].Items.length>0){
                 for (var j = 0; j < menu[i].Items.length; j++) {
                     menu_type[i].innerHTML += '<div name="' + menu[i].Title + '" class="menu_option"></div>';
+                    menu_type[i].innerHTML += '<div id="chooseItem' + (j+counter) + '" class="menu_option_chooseItem"></div>';
                 }
 
                 for (var j = 0; j < menu[i].Items.length; j++) {
                     var menu_option = document.getElementsByClassName("menu_option");
                     menu_option[counter].innerHTML += '<div class="menu_option_text">' +
-                        '<p class="menu_option_name">' + menu[i].Items[j].Title + '</p>' +
+                        '<p class="menu_option_name" onclick="displayChooseItemMenu(' + counter  + ', ' + menu[i].Items[j]  + ')">'  +
+                            menu[i].Items[j].Title + '</p>' +
                         '<p class="menu_option_description">' + menu[i].Items[j].Description + '</p><hr>' +
                         '</div>' +
                         '<div class="menu_option_nonText">' +
@@ -60,7 +62,6 @@ var ready = function() {
                 }
             }
         }
-
         populateCheckout();
     });
 
@@ -117,4 +118,19 @@ var confirmOrder = function(){
 var cancelOrder = function(){
     document.getElementById("checkout").style.display = 'none';
     document.getElementById("proceedToCheckoutButton").style.display = 'block';
+}
+
+var displayChooseItemMenu = function(itemId, foodItem){
+    if(document.getElementById("chooseItem" + itemId).innerHTML === '') {
+        $.get("../chooseOrderItem/addItem.html", function(data) {
+            var menu_type = document.getElementsByClassName("menu_option_chooseItem");
+            menu_type[itemId].innerHTML += data;
+        });
+    }
+}
+
+var removeChooseItemMenu = function(self){
+    var itemId = $(self).parent().parent().parent().parent().attr('id');
+    document.getElementById(itemId).innerHTML = '';
+    console.log(itemId);
 }

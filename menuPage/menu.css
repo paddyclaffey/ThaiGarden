@@ -144,8 +144,6 @@ body{
     opacity: 0.75;
     margin-bottom: 25px;
     width: 100%;
-    height: 250px;
-    overflow-y: auto;
 }
 
 .menu_option {
@@ -155,7 +153,6 @@ body{
     min-width: 50%;
     margin-left: 15px;
     margin-right: 15px;
-    height: 100px;
 }
 
 .order_list{
@@ -165,6 +162,11 @@ body{
 }
 
 .order_list_item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.menu_option_chooseItem{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
