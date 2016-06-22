@@ -51,7 +51,7 @@ var ready = function() {
                 for (var j = 0; j < menu[i].Items.length; j++) {
                     var menu_option = document.getElementsByClassName("menu_option");
                     menu_option[counter].innerHTML += '<div class="menu_option_text">' +
-                        '<p class="menu_option_name" onclick="displayChooseItemMenu(' + counter  + ', ' + menu[i].Items[j]  + ')">'  +
+                        '<p class="menu_option_name" onclick="displayChooseItemMenu(' + counter  + ')">'  +
                             menu[i].Items[j].Title + '</p>' +
                         '<p class="menu_option_description">' + menu[i].Items[j].Description + '</p><hr>' +
                         '</div>' +
