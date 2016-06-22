@@ -13,67 +13,68 @@
     </div>
 </head>
 <body onload="ready();">
-    <div class="header_image"></div>
-    <div class="container">
-        <div class="menu_container">
-            <div class="header">
-                <img src="../images/ThaiGarden-Logo.png">
-            </div>
-        </div>
-        <div class="side_border"></div>
-        <div class="checkout_container">
-            <img src="../images/close.png">
-            <p>Your Order</p>
-            <div class="order_container">
-                <div class="order_list"></div>
-                <div class="order_coupon"></div>
-                <div class="order_total"></div>
-            </div>
-
-            <button id="proceedToCheckoutButton" onclick="displayCheckout();">Proceed to Checkout</button>
-
-            <div id="checkout" style="display: none">
-                <p>Checkout</p>
-                <div class="checkout_container_option">
-                    <div class="checkout_container_option_for">
-                        <p>Order for</p>
-                        <form>
-                            <input type="radio" name="orderFor" value="collection" checked> Collection<br>
-                            <input type="radio" name="orderFor" value="delivery"> Delivery<br>
-                        </form>
-                    </div>
-                    <div class="checkout_container_option_collect">
-                        <p>Collect at</p>
-                        <select name="collectionTime">
-                            <option value="ASAP">ASAP</option>
-                            <option value=".5">30 min</option>
-                            <option value="1">1 Hour</option>
-                            <option value="1.5">1 Hour 30 min</option>
-                            <option value="2">2 Hours</option>
-                        </select>
-                    </div>
-                    <div class="checkout_container_option_pay">
-                        <p>Pay with</p>
-                        <form>
-                            <input type="radio" name="payWith" value="cash" checked> Cash<br>
-                            <input type="radio" name="payWith" value="card">Credit/Debit Card<br>
-                        </form>
-                    </div>
-                    <div class="checkout_container_option_name">
-                        <label>Name</label>
-                        <input type="text" required="required">
-                    </div>
-                    <div class="checkout_container_option_mobile">
-                        <label>Mobile No.</label>
-                        <input type="number">
-                    </div>
-                    <div class="checkout_container_option_confirm">
-                        <p onclick="cancelOrder">Cancel</p>
-                        <button onclick="confirmOrder()">Confirm</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<img src="../images/menuBackground.jpg" id="bg" alt="">
+<div class="container">
+    <div class="header">
+        <img src="../images/ThaiGarden-Logo.png" class="image">
+        <img src="../images/Shopping%20Basket%20icon.png" class="basket">
     </div>
+    <div class="menu_container"></div>
+
+    <!--<div class="side_border"></div>-->
+    <!--<div class="checkout_container">-->
+        <!--<img src="../images/close.png">-->
+        <!--<p>Your Order</p>-->
+        <!--<div class="order_container">-->
+            <!--<div class="order_list"></div>-->
+            <!--<div class="order_coupon"></div>-->
+            <!--<div class="order_total"></div>-->
+        <!--</div>-->
+
+        <!--<button id="proceedToCheckoutButton" onclick="displayCheckout();">Proceed to Checkout</button>-->
+
+        <!--<div id="checkout" style="display: none">-->
+            <!--<p>Checkout</p>-->
+            <!--<div class="checkout_container_option">-->
+                <!--<div class="checkout_container_option_for">-->
+                    <!--<p>Order for</p>-->
+                    <!--<form>-->
+                        <!--<input type="radio" name="orderFor" value="collection" checked> Collection<br>-->
+                        <!--<input type="radio" name="orderFor" value="delivery"> Delivery<br>-->
+                    <!--</form>-->
+                <!--</div>-->
+                <!--<div class="checkout_container_option_collect">-->
+                    <!--<p>Collect at</p>-->
+                    <!--<select name="collectionTime">-->
+                        <!--<option value="ASAP">ASAP</option>-->
+                        <!--<option value=".5">30 min</option>-->
+                        <!--<option value="1">1 Hour</option>-->
+                        <!--<option value="1.5">1 Hour 30 min</option>-->
+                        <!--<option value="2">2 Hours</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--<div class="checkout_container_option_pay">-->
+                    <!--<p>Pay with</p>-->
+                    <!--<form>-->
+                        <!--<input type="radio" name="payWith" value="cash" checked> Cash<br>-->
+                        <!--<input type="radio" name="payWith" value="card">Credit/Debit Card<br>-->
+                    <!--</form>-->
+                <!--</div>-->
+                <!--<div class="checkout_container_option_name">-->
+                    <!--<label>Name</label>-->
+                    <!--<input type="text" required="required">-->
+                <!--</div>-->
+                <!--<div class="checkout_container_option_mobile">-->
+                    <!--<label>Mobile No.</label>-->
+                    <!--<input type="number">-->
+                <!--</div>-->
+                <!--<div class="checkout_container_option_confirm">-->
+                    <!--<p onclick="cancelOrder">Cancel</p>-->
+                    <!--<button onclick="confirmOrder()">Confirm</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
 </body>
 </html>

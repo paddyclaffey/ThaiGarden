@@ -8,32 +8,57 @@
     }
 }
 
-
-body{
-    background-image: url("../images/thai_food.jpg");
+#bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
 }
 
 .container{
-    margin-top: -10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    font-family: Helvetica sans-serif;
+    background-color: transparent;
+    display: block;
+    margin: auto;
+    width: 500px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #114411;
+    position: relative;
 }
 
 .header{
-    background-color: #ffffff;
+    background-color: white;
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 1px;
+    border-bottom: solid;
+    border-width: .5px;
+    border-color: #b3b3b3;
+    position: absolute;
+    z-index: 10;
+}
+img.image {
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-bottom: 12px;
+}
+
+img.basket{
+    padding-top: 15px;
+    padding-left: 280px;
+    padding-bottom: 12px;
 }
 
 .menu_container{
+    background-color: white;
+    padding-top:80px;
     flex: 3;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    opacity: 0.8;
 }
 
 .checkout_container{
@@ -140,10 +165,9 @@ body{
     flex-direction: column;
     flex-wrap: nowrap;
     border-radius: 6px 6px;
-    background-color: #ffffff;
-    opacity: 0.75;
     margin-bottom: 25px;
     width: 100%;
+    background-color: white;
 }
 
 .menu_option {
