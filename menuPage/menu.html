@@ -2,86 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Javascipt Scripts-->
     <script src="../namespace.js"></script>
     <script src="./populateMenu.js"></script>
     <script src="../chooseOrderItem/addItem.js"></script>
+    <script src="../checkout/checkout.js"></script>
+    <script src="../cart/cart.js"></script>
+
+    <!-- Libraries -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link type="text/html" href="../chooseOrderItem/addItem.html">
+
+    <!-- Styling -->
     <link rel="stylesheet" type="text/css" href="./menu.css">
     <link rel="stylesheet" type="text/css" href="../chooseOrderItem/addItem.css">
+
     <div class="title">
         <title>Thai Garden</title>
     </div>
 </head>
-<body onload="ready();">
-<img src="../images/menuBackground.jpg" id="bg" alt="">
-<div class="container">
-    <div class="header">
-        <img src="../images/ThaiGarden-Logo@2x.png" class="image">
-        <img src="../images/Shopping%20Basket%20icon.png" class="basket">
+<body onload="thaiFood.menu.ready();">
+    <img src="../images/menuBackground.jpg" id="bg" alt="">
+    <div class="container">
+        <div class="header">
+            <img src="../images/ThaiGarden-Logo@2x.png" class="image">
+            <img src="../images/Shopping%20Basket%20icon.png" class="basket">
+        </div>
+        <div class="menu_container"></div>
     </div>
-    <div class="menu_container"></div>
-</div>
-<div class="side_border"></div>
-<div class="checkout_container">
-    <img src="../images/close.png">
-    <p>Your Order</p>
-    <div class="order_container">
-        <div class="order_list"></div>
-        <div>
-            <div id="addCoupon">
-                <button id="coupon" onclick="populateCoupon()">Add Coupon</button>
-            </div>
-            <div id="displayCoupon" style="display: none">
-                <div class="order_coupon"></div>
+    <div class="side_border"></div>
+    <div class="checkout_container">
+        <img src="../images/close.png">
+            <p>Your Order</p>
+            <div class="order_container">
+                <div class="order_list"></div>
+                <div>
+                    <div id="addCoupon" >
+                        <label>Add Coupon</label>
+                        <input type="text">
+                        <button onclick="thaiFood.cart.populateCoupon()">Apply</button>
+                    </div>
+                    <div id="displayCoupon" style="display: none">
+                        <div class="order_coupon"></div>
+                    </div>
+                </div>
+                <div class="order_total"></div>
+             </div>
+
+            <button id="proceedToCheckoutButton" onclick="thaiFood.checkout.displayCheckout();" style="display: none">Proceed to Checkout</button>
+        <div id="checkout" style="display: none">
+            <div class="checkout_container_option">
+                <p>Checkout</p>
+                <div class="checkout_container_option_for">
+                    <p>Order for</p>
+                    <form>
+                        <input type="radio" name="orderFor" value="collection" checked> Collection<br>
+                        <input type="radio" name="orderFor" value="delivery"> Delivery<br>
+                    </form>
+                </div>
+                <div class="checkout_container_option_collect">
+                    <p>Collect at</p>
+                    <select name="collectionTime">
+                        <option value="ASAP">ASAP</option>
+                        <option value=".5">30 min</option>
+                        <option value="1">1 Hour</option>
+                        <option value="1.5">1 Hour 30 min</option>
+                        <option value="2">2 Hours</option>
+                    </select>
+                </div>
+                <div class="checkout_container_option_pay">
+                    <p>Pay with</p>
+                    <form>
+                        <input type="radio" name="payWith" value="cash" checked> Cash<br>
+                        <input type="radio" name="payWith" value="card">Credit/Debit Card<br>
+                    </form>
+                </div>
+                <div class="checkout_container_option_name">
+                    <label>Name</label>
+                    <input type="text" required="required">
+                </div>
+                <div class="checkout_container_option_mobile">
+                    <label>Mobile No.</label>
+                    <input type="number">
+                </div>
+                <div class="checkout_container_option_confirm">
+                    <p onclick="thaiFood.checkout.cancelOrder()">Cancel</p>
+                    <button onclick="thaiFood.checkout.confirmOrder()">Confirm</button>
+                </div>
             </div>
         </div>
-        <div class="order_total"></div>
     </div>
+<script>
+    var $window = $(window),
+            $stickyEl = $('#checkout_container'),
+            elTop = $stickyEl.offset().top;
 
-    <button id="proceedToCheckoutButton" onclick="displayCheckout();" style="display: none">Proceed to Checkout</button>
-    <hr>
-    <div id="checkout" style="display: none">
-        <p id="checkout1">Checkout</p>
-        <div class="checkout_container_option">
-            <div class="checkout_container_option_for">
-                <p>Order for</p>
-                <form>
-                    <input type="radio" name="orderFor" value="collection" checked> Collection<br>
-                    <input type="radio" name="orderFor" value="delivery"> Delivery<br>
-                </form>
-            </div>
-            <div class="checkout_container_option_collect">
-                <p>Collect at</p>
-                <select name="collectionTime">
-                    <option value="ASAP">ASAP</option>
-                    <option value=".5">30 min</option>
-                    <option value="1">1 Hour</option>
-                    <option value="1.5">1 Hour 30 min</option>
-                    <option value="2">2 Hours</option>
-                </select>
-            </div>
-            <div class="checkout_container_option_pay">
-                <p>Pay with</p>
-                <form>
-                    <input type="radio" name="payWith" value="cash" checked> Cash<br>
-                    <input type="radio" name="payWith" value="card">Credit/Debit Card<br>
-                </form>
-            </div>
-            <div class="checkout_container_option_name">
-                <label>Name</label>
-                <input type="text" required="required" id ="name">
-            </div>
-            <div class="checkout_container_option_mobile">
-                <label>Mobile No.</label>
-                <input type="tel" id="contact">
-            </div>
-            <div class="checkout_container_option_confirm">
-                <p onclick="cancelOrder">Cancel</p>
-                <button onclick="confirmOrder()">Confirm</button>
-            </div>
-    </div>
-</div>
-</div>
+    $window.scroll(function() {
+        $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+    });
+</script>
 </body>
 </html>

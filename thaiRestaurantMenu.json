@@ -432,7 +432,7 @@
           "Title": "301 Gaeng kiew wan",
           "Description": "Bangkok’s famous green curry. A fragrant delight created from green chilli, coconut milk, bamboo shoots, aubergines, lime leaves and sweet basil leaves.",
           "Price": 8.95,
-          "HasVariation": false,
+          "HasVariation": true,
           "HasExtras": false,
           "Variations": [
             {
