@@ -58,6 +58,7 @@ thaiFood.menu = {
                 }
             }
             thaiFood.cart.populateCart();
+            thaiFood.menu.displayLocation();
         });
     },
 
@@ -119,8 +120,15 @@ thaiFood.menu = {
                 }
             });
         }
-    }
+    },
 
+    changeLocation: function (location){
+        window.localStorage.setItem('location', location);
+    },
+
+    displayLocation : function (){
+        document.getElementsByClassName('location')[0].innerHTML = window.localStorage.getItem('location');
+    }
 };
 
 

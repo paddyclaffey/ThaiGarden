@@ -23,6 +23,9 @@
     }
 
     .header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         background-color: white;
         width: 100%;
         margin-top: 1px;
