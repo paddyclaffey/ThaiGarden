@@ -17,6 +17,13 @@ app.get('/restaurantMenu', function (req, res) {
     });
 })
 
+app.get('/restaurantMenu', function (req, res) {
+    fs.readFile( "../thaiRestaurantMenu.json", 'utf8', function (err, data) {
+        data = JSON.parse(data);
+        res.end( JSON.stringify(data.RestaurantMenuCategories) );
+    });
+})
+
 app.get('/submitOrder/:typeId/:burgerId', function (req, res) {
     fs.readFile( "../thaiRestaurantMenu.json", 'utf8', function (err, data) {
         var idOfFoodType = parseInt(req.params.typeId);

@@ -154,18 +154,47 @@ body{
     margin-left: 15px;
     margin-right: 15px;
 }
-
 .order_list{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
 }
-
 .order_list_item {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
+
+.order_coupon{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.order_coupon_item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.order_coupon_item_name{
+    flex: 4
+}
+.order_coupon_item_value{
+    flex: 1
+}
+
+
+.order_total{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.order_total_title{
+    flex: 4;
+}
+.order_total_amount{
+    flex: 1;
+}
+
 .menu_option_chooseItem{
     display: flex;
     flex-direction: row;
@@ -182,7 +211,7 @@ body{
 .menu_option_nonText {
     display: flex;
     flex: 1;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
 }
 

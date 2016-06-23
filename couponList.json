@@ -1,0 +1,6 @@
+{
+  "coupons": [
+    {"id": "first", "value": 10 },
+    {"id": "cheaper", "value": 20 }
+  ]
+}

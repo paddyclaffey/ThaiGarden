@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="../namespace.js"></script>
     <script src="./populateMenu.js"></script>
     <script src="../chooseOrderItem/addItem.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -26,11 +27,18 @@
             <p>Your Order</p>
             <div class="order_container">
                 <div class="order_list"></div>
-                <div class="order_coupon"></div>
-                <div class="order_total"></div>
-            </div>
+                <div>
+                    <div id="addCoupon">
+                        <button onclick="populateCoupon()">Add Coupon</button>
+                    </div>
+                    <div id="displayCoupon" style="display: none">
+                        <div class="order_coupon"></div>
+                    </div>
+                </div>
+                <div class="order_total">
+                </div>
 
-            <button id="proceedToCheckoutButton" onclick="displayCheckout();">Proceed to Checkout</button>
+            <button id="proceedToCheckoutButton" onclick="displayCheckout();" style="display: none">Proceed to Checkout</button>
 
             <div id="checkout" style="display: none">
                 <p>Checkout</p>
