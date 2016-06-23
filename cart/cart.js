@@ -40,19 +40,14 @@ thaiFood.cart = {
 
     populateCoupon : function(){
         if(thaiFood.customerOrder.coupon.id){
-            //ready for multiple coupons
-            //for(var i=0; i<checkout.coupon.length; i++){
             var couponList = document.getElementsByClassName('order_coupon');
             couponList[0].innerHTML += '<div class="order_coupon_item"></div>';
-            //}
-
-            //ready for multiple coupons
-            //for(var i=0; i<checkout.coupon.length; i++){
+            
             var couponListItem = document.getElementsByClassName('order_coupon_item');
             couponListItem[0].innerHTML = '<div class="order_coupon_item_name">' +
                 '<p>Coupon (' + thaiFood.customerOrder.coupon.redeemValue + '% Off)</p></div>' +
                 '<div class="order_coupon_item_value"><p>€' + thaiFood.cart.calculateCouponValue().toFixed(2) + '</p></div>';
-            //}
+            
             document.getElementById('addCoupon').style.display = 'none';
             document.getElementById('displayCoupon').style.display = 'block';
         }
@@ -116,7 +111,7 @@ thaiFood.cart = {
     },
 
     calculateCouponValue : function(){
-        if(thaiFood.customerOrder.order.length>0){
+        if(thaiFood.customerOrder.coupon.id){
             return thaiFood.cart.calculateTotalPrice()/100*thaiFood.customerOrder.coupon.redeemValue;
         }
         return 0;

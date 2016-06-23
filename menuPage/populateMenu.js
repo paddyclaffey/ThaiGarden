@@ -5,7 +5,7 @@
 thaiFood.createNamespace("osl.menu");
 
 thaiFood.customerOrder = {
-    coupon: { id: 'first', redeemValue: 10},
+    coupon: { },
     restaurantId : 1,
     order :[]
 };
