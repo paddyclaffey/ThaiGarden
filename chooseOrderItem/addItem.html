@@ -1,7 +1,7 @@
 <div class="container1">
     <div class="grid">
         <div class="grid__row1">
-            <div class="grid__item1"><img src="../images/pic1.jpg"></div>
+            <div class="grid__item1"><img src="../images/pic1.jpg" class="pic"></div>
             <div class="grid__item1">
                 <label>
                    <!--<a> <img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png"> &nbsp </a>-->
@@ -24,6 +24,34 @@
                     <input type="radio" value="egg noodle"/> Egg Noodle<br>
                 </label>
             </div>
+            <!--<div class="attribImg">-->
+                <!--<input type="radio" name="img" id="steamed" class="radio"/>-->
+                <!--<label for="steamed">-->
+                    <!--<img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" class="imgRadio"/>-->
+                <!--</label>-->
+                <!--<br />-->
+                <!--<input type="radio" name="img" id="brown" class="radio"/>-->
+                <!--<label for="brown">-->
+                    <!--<img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" class="imgRadio"/>-->
+                <!--</label>-->
+                <!--<br />-->
+                <!--<input type="radio" name="img" id="coconut" class="radio"/>-->
+                <!--<label for="coconut">-->
+                    <!--<img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png"class="imgRadio"/>-->
+                <!--</label>-->
+                <!--<br />-->
+                <!--<input type="radio" name="img" id="rice" class="radio"/>-->
+                <!--<label for="rice">-->
+                    <!--<img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" class="imgRadio"/>-->
+                <!--</label>-->
+                <!--<br />-->
+                <!--<input type="radio" name="img" id="noodle" class="radio"/>-->
+                <!--<label for="noodle">-->
+                    <!--<img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" class="imgRadio"/>-->
+                <!--</label>-->
+                <!--<br />-->
+            <!--</div>-->
+        <!--</div>-->
             <div class="grid__item1"><br><br>
                 <label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp €0.50</label><br>
                 <label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp €1.00</label><br>
@@ -37,8 +65,9 @@
                 <input type='number' contenteditable="false" name='quantity' value='1' min="0" class='qty' />
                 <input type='button' value='+' class='qtyplus' onclick="addNum(this)" field='quantity' />
             </form></div>
-            <div class="grid__item1"><button type="button">Add to Cart</button></div>
-            <p onclick='removeChooseItemMenu(this)'>Cancel</p>
+            <div class="grid__item1" id="buttonGrid"><button type="button">Add to Cart</button></div>
+            <p onclick='removeChooseItemMenu(this)' id="cancel">Cancel</p>
         </div>
     </div>
 </div>
+

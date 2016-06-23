@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <style>
+        .attribImg {
+            position: relative; /** this is the positioning context **/
+            width: 50px;
+            height: 50px;
+        }
+        input {
+            visibility: hidden;
+        }
+
+        label {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        img {
+            position: relative;
+            z-index: -1;
+            height: 20px;
+            width: 20px;
+        }
+
+        input[type="radio"]:checked+label {
+            background-image: url("../images/Selector - Single Selected 2 Copy@2x.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            height:20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="attribImg">
+    <input type="radio" name="img" id="steamed" class="radio"/>
+    <label for="steamed">
+        <img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" class="imgRadio"/>
+    </label>
+    <br />
+    <input type="radio" name="img" id="brown" class="radio"/>
+    <label for="brown">
+        <img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" class="imgRadio"/>
+    </label>
+    <br />
+    <input type="radio" name="img" id="coconut" class="radio"/>
+    <label for="coconut">
+        <img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png"class="imgRadio"/>
+    </label>
+    <br />
+    <input type="radio" name="img" id="rice" class="radio"/>
+    <label for="rice">
+        <img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" class="imgRadio"/>
+    </label>
+    <br />
+    <input type="radio" name="img" id="noodle" class="radio"/>
+    <label for="noodle">
+        <img src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" class="imgRadio"/>
+    </label>
+    <br />
+</div>
+
+<!--<div id="sites">-->
+    <!--<input type="radio" name="site" id="so" value="stackoverflow"/><label for="so"><img id="img1"-->
+                                                                                        <!--src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png"-->
+                                                                                        <!--alt="Stack Overflow"/></label>-->
+    <!--<input type="radio" name="site" id="sf" value="serverfault"/><label for="sf"><img-->
+        <!--src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" alt="Server Fault"/></label>-->
+    <!--<input type="radio" name="site" id="su" value="superuser"/><label for="su"><img-->
+        <!--src="../images/Selector%20-%20Single%20Unselected%203%20Copy@2x.png" alt="Super User"/></label>-->
+<!--</div>-->
+<!--<script>-->
+    <!--$('#sites input:radio').addClass('input_hidden');-->
+    <!--$('#sites label').click(function () {-->
+        <!--$(this).addClass('selected').siblings().removeClass('selected');-->
+    <!--});-->
+<!--</script>-->
+</body>
+</html>

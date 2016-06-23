@@ -1,47 +1,82 @@
-.header_image{
-    background-image: url("../images/ThaiGarden-Logo.png");
-}
-
-@media only screen and (max-width: 500px){
-    .header_image{
-        background-image: url("../images/ThaiGarden-Logo.png");
-    }
-}
-
-
 body{
-    background-image: url("../images/thai_food.jpg");    
+}
+#bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
 }
 
 .container{
-    margin-top: -10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    font-family: Helvetica sans-serif;
+    position:relative;
+    background-color: transparent;
+    display: block;
+    margin-left: 25%;
+    width: 500px;
+    border-radius: 0px 0px 30px 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #114411;
+    float:left;
+    top:-10px;
 }
 
 .header{
-    background-color: #ffffff;
+    background-color: white;
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 1px;
+    border-bottom: solid;
+    border-width: .5px;
+    border-color: #b3b3b3;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    height: 80px;
+}
+img.image {
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-bottom: 12px;
+    height: 50px;
+}
+
+img.basket{
+    padding-top: 15px;
+    padding-left: 280px;
+    padding-bottom: 12px;
 }
 
 .menu_container{
+    overflow: visible;
+    background-color: white;
+    padding-top:80px;
     flex: 3;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    opacity: 0.8;
+    overflow-y: scroll;
+    top: 0;
 }
 
 .checkout_container{
     flex: 1;
     background-color: #ffffff;
+    border-radius: 0px 0px 30px 30px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    width: 20%;
+    height:110vh;
+    border-left: 3px solid #406840;
+    position: fixed;
+    top: 0;
+    left:58.7%;
+
+
 }
 
 .side_border{
@@ -140,10 +175,9 @@ body{
     flex-direction: column;
     flex-wrap: nowrap;
     border-radius: 6px 6px;
-    background-color: #ffffff;
-    opacity: 0.75;
     margin-bottom: 25px;
     width: 100%;
+    background-color: white;
 }
 
 .menu_option {
@@ -153,6 +187,7 @@ body{
     min-width: 50%;
     margin-left: 15px;
     margin-right: 15px;
+    height: 100px;
 }
 .order_list{
     display: flex;
@@ -233,7 +268,7 @@ body{
     float: right;
     margin-right: 15px;
     transform: rotate(90deg);
- }
+}
 
 .bottom_border {
     border-bottom: 1px solid #406840;
@@ -261,7 +296,7 @@ body{
     margin-right: 15px;
 }
 
-hr {
+hr.line {
     width: 100%;
     height: 8px;
     border: 0;
