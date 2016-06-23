@@ -304,6 +304,9 @@ img.basket {
     margin-bottom: -3%;
 }
 
+.menu_option_description{
+    margin-top: 2%;
+}
 .menu_option_nonText {
     display: flex;
     flex: 1;
