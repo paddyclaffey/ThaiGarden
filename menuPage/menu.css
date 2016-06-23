@@ -131,10 +131,6 @@
         margin-left: 15%;
     }
 
-    .checkout_container_option_pay > p {
-        flex: 1
-    }
-
     .checkout_container_option_pay > form {
         flex: 3;
         padding-top: 7%;
