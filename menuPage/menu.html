@@ -41,7 +41,7 @@
                     <div id="addCoupon" >
                         <label>Add Coupon</label>
                         <input type="text">
-                        <button onclick="thaiFood.cart.populateCoupon()">Apply</button>
+                        <button id="checkCoupon" onclick="thaiFood.cart.populateCoupon()">Apply</button>
                     </div>
                     <div id="displayCoupon" style="display: none">
                         <div class="order_coupon"></div>
@@ -53,7 +53,7 @@
             <button id="proceedToCheckoutButton" onclick="thaiFood.checkout.displayCheckout();" style="display: none">Proceed to Checkout</button>
         <div id="checkout" style="display: none">
             <div class="checkout_container_option">
-                <p>Checkout</p>
+                <p id="checkout1">Checkout</p>
                 <div class="checkout_container_option_for">
                     <p>Order for</p>
                     <form>
@@ -80,11 +80,11 @@
                 </div>
                 <div class="checkout_container_option_name">
                     <label>Name</label>
-                    <input type="text" required="required">
+                    <input type="text" required="required" id="name">
                 </div>
                 <div class="checkout_container_option_mobile">
                     <label>Mobile No.</label>
-                    <input type="number">
+                    <input type="tel" id="contact">
                 </div>
                 <div class="checkout_container_option_confirm">
                     <p onclick="thaiFood.checkout.cancelOrder()">Cancel</p>
@@ -93,14 +93,5 @@
             </div>
         </div>
     </div>
-<script>
-    var $window = $(window),
-            $stickyEl = $('#checkout_container'),
-            elTop = $stickyEl.offset().top;
-
-    $window.scroll(function() {
-        $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
-    });
-</script>
 </body>
 </html>
