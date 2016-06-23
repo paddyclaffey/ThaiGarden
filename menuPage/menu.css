@@ -134,6 +134,39 @@ img.basket {
     padding-top: 7%;
     padding-left: 5%;
 }
+.checkout_container_option_pay_card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-top: 5%;
+    margin-left: 15%;
+}
+.checkout_container_option_pay_card_item{
+    padding-top: 5%;
+}
+.checkout_container_option_pay_card_item > input{
+    float: right;
+}
+
+.checkout_container_option_for_delivery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-top: 5%;
+    margin-left: 15%;
+}
+.checkout_container_option_for_delivery_choice{
+    padding-top: 5%;
+}
+.checkout_container_option_for_delivery_choice > input{
+    float: right;
+}
+
+.checkout_container_option_pay > form {
+    flex: 3;
+    padding-top: 7%;
+    padding-left: 5%;
+}
 
 .checkout_container_option_collect {
     display: flex;

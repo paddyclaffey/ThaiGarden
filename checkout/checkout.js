@@ -19,5 +19,23 @@ thaiFood.checkout = {
 
     resubmitDetails: function (confirmationCode){
 
+    },
+
+    displayCardForm : function(){
+        if(document.getElementById("cardForm").style.display === 'none') {
+            document.getElementById("cardForm").style.display = 'block';
+        }
+        else{
+            document.getElementById("cardForm").style.display = 'none';
+        }
+    },
+
+    displayDeliveryForm : function(){
+        if(document.getElementById("deliveryForm").style.display === 'none') {
+            document.getElementById("deliveryForm").style.display = 'block';
+        }
+        else{
+            document.getElementById("deliveryForm").style.display = 'none';
+        }
     }
 }
