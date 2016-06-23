@@ -72,6 +72,7 @@ img.basket {
 .menu_container {
     overflow: visible;
     background-color: white;
+    width: 500px;
     padding-top: 80px;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -89,7 +90,7 @@ img.basket {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 30%;
+    width: 25%;
     height: 100%;
     border-left: 3px solid #406840;
     position: fixed;

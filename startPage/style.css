@@ -1,13 +1,3 @@
-.header_image{
-    background-image: url("../images/ThaiGarden-Logo.png");
-}
-
-@media only screen and (max-width: 500px){
-    .header_image{
-        background-image: url("../images/ThaiGarden-Logo.png");
-    }
-}
-
 #bg{
     position: fixed;
     top: 0;
@@ -22,6 +12,7 @@
     margin: auto;
     width: 400px;
     padding-top: 10%;
+    overflow-y: hidden;
 }
 
 .locationGrid {
