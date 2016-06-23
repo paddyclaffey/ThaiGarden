@@ -1,0 +1,41 @@
+<div id="checkout" style="display: none">
+    <p>Checkout</p>
+    <div class="checkout_container_option">
+        <div class="checkout_container_option_for">
+            <p>Order for</p>
+            <form>
+                <input type="radio" name="orderFor" value="collection" checked> Collection<br>
+                <input type="radio" name="orderFor" value="delivery"> Delivery<br>
+            </form>
+        </div>
+        <div class="checkout_container_option_collect">
+            <p>Collect at</p>
+            <select name="collectionTime">
+                <option value="ASAP">ASAP</option>
+                <option value=".5">30 min</option>
+                <option value="1">1 Hour</option>
+                <option value="1.5">1 Hour 30 min</option>
+                <option value="2">2 Hours</option>
+            </select>
+        </div>
+        <div class="checkout_container_option_pay">
+            <p>Pay with</p>
+            <form>
+                <input type="radio" name="payWith" value="cash" checked> Cash<br>
+                <input type="radio" name="payWith" value="card">Credit/Debit Card<br>
+            </form>
+        </div>
+        <div class="checkout_container_option_name">
+            <label>Name</label>
+            <input type="text" required="required">
+        </div>
+        <div class="checkout_container_option_mobile">
+            <label>Mobile No.</label>
+            <input type="number">
+        </div>
+        <div class="checkout_container_option_confirm">
+            <p onclick="cancelOrder">Cancel</p>
+            <button onclick="confirmOrder()">Confirm</button>
+        </div>
+    </div>
+</div>

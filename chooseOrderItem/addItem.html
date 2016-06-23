@@ -61,12 +61,12 @@
         <div class="grid__row1">
             <div class="grid__item1">
             <form id='myform' method='POST' action='#'>
-                <input type='button' value='-' class='qtyminus' onclick="minusNum(this)" field='quantity' />
+                <input type='button' value='-' class='qtyminus' onclick="thaiFood.addOrder.minusNum(this)" field='quantity' />
                 <input type='number' contenteditable="false" name='quantity' value='1' min="0" class='qty' />
-                <input type='button' value='+' class='qtyplus' onclick="addNum(this)" field='quantity' />
+                <input type='button' value='+' class='qtyplus' onclick="thaiFood.addOrder.addNum(this)" field='quantity' />
             </form></div>
             <div class="grid__item1" id="buttonGrid"><button type="button">Add to Cart</button></div>
-            <p onclick='removeChooseItemMenu(this)' id="cancel">Cancel</p>
+            <p onclick='thaiFood.addOrder.removeChooseItemMenu(this)' id="cancel">Cancel</p>
         </div>
     </div>
 </div>
