@@ -47,8 +47,25 @@
 
     img.basket {
         padding-top: 15px;
-        padding-left: 280px;
+        padding-left: 70px;
         padding-bottom: 12px;
+    }
+
+    #loc{
+        padding-top: 45px;
+        margin-left: 20px;
+        text-decoration: none;
+        color: #c62c02;
+        font-size: 13px;
+        font-family: Helvetica;
+    }
+
+    #locationSelected{
+        font-size: 20px;
+        font-family: Helvetica;
+        color: #009900;
+        padding-top: 20px;
+        margin-left:10px;
     }
 
     .menu_container {
