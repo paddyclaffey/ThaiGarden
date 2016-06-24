@@ -159,7 +159,7 @@ img.basket {
     padding-top: 5%;
 }
 .checkout_container_option_for_delivery_choice > input{
-    float: right;
+    width: 120px
 }
 
 .checkout_container_option_pay > form {
@@ -426,14 +426,13 @@ hr.line {
 
 #contact {
     width: 50%;
-    margin-left: 3.5%;
+    margin-left: 8%;
 }
 
 #addCoupon {
-    padding-top: 2%;
+    padding-top: 5%;
     padding-bottom: 2%;
     margin-left: 6%;
-    border-top: .5px dotted;
     border-bottom: .5px dotted;
     border-color: #406840;
     font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif
@@ -445,10 +444,18 @@ hr.line {
 
 #checkCoupon {
     float: right;
-    margin-right: 6%;
+    margin-right: 5%;
     align-items: center;
     background-color: white;
     color: #3333ff;
     border: solid #3333ff .5px;
     font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+}
+
+#town{
+    padding-right: 28px;
+}
+
+#town1{
+    padding-right: 18px;
 }
